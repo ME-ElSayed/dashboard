@@ -3,7 +3,7 @@ import 'package:responsive_dashboard/models/all_expenses_item_model.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item.dart';
 
-class AllExpensesItemsListView extends StatelessWidget {
+class AllExpensesItemsListView extends StatefulWidget {
   const AllExpensesItemsListView({super.key});
   static const List<AllExpensesItemModel> items = [
     AllExpensesItemModel(
@@ -28,20 +28,36 @@ class AllExpensesItemsListView extends StatelessWidget {
   ];
 
   @override
+  State<AllExpensesItemsListView> createState() =>
+      _AllExpensesItemsListViewState();
+}
+
+class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
+  int selectedIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Row(
-      children: items.asMap().entries.map((entry) {
+      children: AllExpensesItemsListView.items.asMap().entries.map((entry) {
         int index = entry.key;
         AllExpensesItemModel item = entry.value;
         return Expanded(
           child: Padding(
-            padding: EdgeInsets.only(right: index != items.length - 1 ? 12 : 0),
+            padding: EdgeInsets.only(
+              right: index != AllExpensesItemsListView.items.length - 1
+                  ? 12
+                  : 0,
+            ),
             child: GestureDetector(
               onTap: () {
-                
+                selectedIndex = index;
+                setState(() {});
               },
 
-              child: AllExpensesItem(isSelected: true, item: item)),
+              child: AllExpensesItem(
+                isSelected: selectedIndex == index,
+                item: item,
+              ),
+            ),
           ),
         );
       }).toList(),
