@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
-class QuickInVoiceHeaser extends StatelessWidget {
-  const QuickInVoiceHeaser({super.key});
+class QuickInVoiceHeader extends StatelessWidget {
+  const QuickInVoiceHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
