@@ -59,13 +59,13 @@ class IncomeDetailsCard extends StatelessWidget {
 
           const SizedBox(width: 12),
 
-          // Title
           Expanded(
             child: Text(
               itemDetailsModel.title,
-              style: AppStyles.styleRegular16(context).copyWith(
-                color: Colors.grey[700], // softer label tone
-              ),
+              style: AppStyles.styleRegular16(
+                context,
+              ).copyWith(color: Colors.grey[700]),
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -75,9 +75,9 @@ class IncomeDetailsCard extends StatelessWidget {
           // Percentage
           Text(
             itemDetailsModel.percentage,
-            style: AppStyles.styleMedium16(context).copyWith(
-              fontWeight: FontWeight.w600, // stronger emphasis
-            ),
+            style: AppStyles.styleMedium16(
+              context,
+            ).copyWith(fontWeight: FontWeight.w600),
           ),
         ],
       ),
