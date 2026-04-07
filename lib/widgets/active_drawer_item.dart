@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dashboard/models/drawer_item_model.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class ActiveDrawerItem extends StatelessWidget {
@@ -15,7 +16,7 @@ class ActiveDrawerItem extends StatelessWidget {
       title: Text(drawerItemModel.title, style: AppStyles.styleBold16(context)),
       trailing: Container(
         width: 3.27,
-        decoration: BoxDecoration(color: Color(0xff4EB7F2)),
+        decoration: BoxDecoration(color: AppColors.primaryColor),
       ),
     );
   }

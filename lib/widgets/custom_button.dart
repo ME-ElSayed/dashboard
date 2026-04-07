@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class CustomButton extends StatelessWidget {
@@ -15,14 +16,12 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           elevation: 0,
-          backgroundColor: backgourndColor ?? const Color(0xFF4DB7F2),
+          backgroundColor: backgourndColor ?? AppColors.primaryColor,
         ),
         onPressed: () {},
         child: Text(
           'Send Money',
-          style: AppStyles.styleSemiBold18(context).copyWith(
-            color: textColor,
-          ),
+          style: AppStyles.styleSemiBold18(context).copyWith(color: textColor),
         ),
       ),
     );

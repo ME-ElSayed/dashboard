@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
@@ -16,7 +17,7 @@ class MyCard extends StatelessWidget {
             fit: BoxFit.fill,
             image: AssetImage(Assets.imagesCardBackground),
           ),
-          color: const Color(0xFF4EB7F2),
+          color: AppColors.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
