@@ -11,7 +11,13 @@ class DashboardTabletLayout extends StatelessWidget {
       children: [
         Expanded(child: CustomDrawer()),
         const SizedBox(width: 32),
-        Expanded(flex: 2, child: DashboardMobileLayout()),
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 40.0),
+            child: DashboardMobileLayout(),
+          ),
+        ),
         const SizedBox(width: 32),
       ],
     );
