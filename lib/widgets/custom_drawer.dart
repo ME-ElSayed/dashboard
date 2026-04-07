@@ -11,8 +11,8 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.white),
+    return Drawer(
+      backgroundColor: Colors.white,
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
