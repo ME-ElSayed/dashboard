@@ -5,6 +5,7 @@ import 'package:responsive_dashboard/widgets/all_expenses_item.dart';
 
 class AllExpensesItemsListView extends StatefulWidget {
   const AllExpensesItemsListView({super.key});
+
   static const List<AllExpensesItemModel> items = [
     AllExpensesItemModel(
       imagePath: Assets.imagesBalance,
@@ -12,7 +13,6 @@ class AllExpensesItemsListView extends StatefulWidget {
       amount: '\$20.00',
       date: 'April 2022',
     ),
-
     AllExpensesItemModel(
       imagePath: Assets.imagesIncome,
       title: 'income',
@@ -34,33 +34,29 @@ class AllExpensesItemsListView extends StatefulWidget {
 
 class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: AllExpensesItemsListView.items.asMap().entries.map((entry) {
-        int index = entry.key;
-        AllExpensesItemModel item = entry.value;
-        return Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(
-              right: index != AllExpensesItemsListView.items.length - 1
-                  ? 12
-                  : 0,
-            ),
+      children: [
+        for (int i = 0; i < AllExpensesItemsListView.items.length; i++) ...[
+          Expanded(
             child: GestureDetector(
               onTap: () {
-                selectedIndex = index;
-                setState(() {});
+                setState(() {
+                  selectedIndex = i;
+                });
               },
-
               child: AllExpensesItem(
-                isSelected: selectedIndex == index,
-                item: item,
+                isSelected: selectedIndex == i,
+                item: AllExpensesItemsListView.items[i],
               ),
             ),
           ),
-        );
-      }).toList(),
+          if (i != AllExpensesItemsListView.items.length - 1)
+            const SizedBox(width: 12),
+        ],
+      ],
     );
   }
 }
