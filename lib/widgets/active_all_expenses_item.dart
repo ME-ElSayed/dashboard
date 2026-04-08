@@ -15,32 +15,44 @@ class ActiveAllExpensesItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
         color: AppColors.primaryColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(width: 1, color: AppColors.primaryColor),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AllExpensesItemHeader(imagePath: item.imagePath, isActive: true),
           const SizedBox(height: 34),
-          Text(
-            item.title,
-            style: AppStyles.styleSemiBold16(
-              context,
-            ).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.title,
+              style: AppStyles.styleSemiBold16(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 8),
-          Text(
-            item.date,
-            style: AppStyles.styleRegular14(
-              context,
-            ).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.date,
+              style: AppStyles.styleRegular14(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 16),
-          Text(
-            item.amount,
-            style: AppStyles.styleSemiBold24(
-              context,
-            ).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.amount,
+              style: AppStyles.styleSemiBold24(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
           ),
         ],
       ),

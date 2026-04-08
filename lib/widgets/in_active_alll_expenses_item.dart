@@ -4,10 +4,7 @@ import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item_header.dart';
 
 class InActiveAllExpensesItem extends StatelessWidget {
-  const InActiveAllExpensesItem({
-    super.key,
-    required this.item,
-  });
+  const InActiveAllExpensesItem({super.key, required this.item});
 
   final AllExpensesItemModel item;
 
@@ -25,13 +22,22 @@ class InActiveAllExpensesItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpensesItemHeader(imagePath: item.imagePath,isActive: false,),
+          AllExpensesItemHeader(imagePath: item.imagePath, isActive: false),
           const SizedBox(height: 34),
-          Text(item.title, style: AppStyles.styleSemiBold16(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(item.title, style: AppStyles.styleSemiBold16(context)),
+          ),
           const SizedBox(height: 8),
-          Text(item.date, style: AppStyles.styleRegular14(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(item.date, style: AppStyles.styleRegular14(context)),
+          ),
           const SizedBox(height: 16),
-          Text(item.amount, style: AppStyles.styleSemiBold24(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(item.amount, style: AppStyles.styleSemiBold24(context)),
+          ),
         ],
       ),
     );
