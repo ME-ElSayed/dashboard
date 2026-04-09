@@ -6,8 +6,15 @@ class CustomButton extends StatelessWidget {
   const CustomButton({super.key, this.backgourndColor, this.textColor});
 
   final Color? backgourndColor, textColor;
+
   @override
   Widget build(BuildContext context) {
+    final background = backgourndColor ?? AppColors.primaryColor;
+    final foreground = textColor ??
+        (ThemeData.estimateBrightnessForColor(background) == Brightness.dark
+            ? Colors.white
+            : AppColors.primaryText(context));
+
     return SizedBox(
       height: 62,
       child: ElevatedButton(
@@ -16,12 +23,12 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           elevation: 0,
-          backgroundColor: backgourndColor ?? AppColors.primaryColor,
+          backgroundColor: background,
         ),
         onPressed: () {},
         child: Text(
           'Send Money',
-          style: AppStyles.styleSemiBold18(context).copyWith(color: textColor),
+          style: AppStyles.styleSemiBold18(context).copyWith(color: foreground),
         ),
       ),
     );

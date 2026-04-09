@@ -27,7 +27,7 @@ class CenterLabel extends StatelessWidget {
           textAlign: TextAlign.center,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: AppStyles.styleBold16(context).copyWith(color: Colors.black),
+          style: AppStyles.styleBold16(context),
         ),
       ],
     );

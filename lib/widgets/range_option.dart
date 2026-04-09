@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class RangeOption extends StatelessWidget {
@@ -7,33 +8,28 @@ class RangeOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          padding: const EdgeInsets.all(12),
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: const Color(0xFFF1F1F1)),
-              borderRadius: BorderRadius.circular(12),
-            ),
+      padding: const EdgeInsets.all(12),
+      decoration: ShapeDecoration(
+        color: AppColors.surfaceAlt(context),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: AppColors.border(context)),
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        spacing: 18,
+        children: [
+          Text('Monthly', style: AppStyles.styleRegular16(context)),
+          Icon(
+            Icons.keyboard_arrow_down,
+            color: AppColors.iconOnSurface(context),
+            size: 24,
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 18,
-            children: [
-              Text(
-                'Monthly',
-                style: AppStyles.styleRegular16(
-                  context,
-                ).copyWith(color: const Color(0xFF064060)),
-              ),
-              Icon(
-                Icons.keyboard_arrow_down,
-                color: const Color(0xFF064060),
-                size: 24,
-              ),
-            ],
-          ),
-        );
+        ],
+      ),
+    );
   }
 }

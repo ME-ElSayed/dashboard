@@ -12,11 +12,17 @@ class ActiveDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: SvgPicture.asset(drawerItemModel.image),
+      leading: SvgPicture.asset(
+        drawerItemModel.image,
+        colorFilter: const ColorFilter.mode(
+          AppColors.primaryColor,
+          BlendMode.srcIn,
+        ),
+      ),
       title: Text(drawerItemModel.title, style: AppStyles.styleBold16(context)),
       trailing: Container(
         width: 3.27,
-        decoration: BoxDecoration(color: AppColors.primaryColor),
+        decoration: const BoxDecoration(color: AppColors.primaryColor),
       ),
     );
   }

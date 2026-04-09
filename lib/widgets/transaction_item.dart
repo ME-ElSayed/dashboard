@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/models/transaction_model.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class TransctionItem extends StatelessWidget {
   const TransctionItem({super.key, required this.transctionModel});
 
   final TransactionModel transctionModel;
+
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: const Color(0xFFFAFAFA),
+      color: AppColors.surfaceAlt(context),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -22,7 +24,7 @@ class TransctionItem extends StatelessWidget {
         subtitle: Text(
           transctionModel.date,
           style: AppStyles.styleRegular16(context).copyWith(
-            color: const Color(0xFFAAAAAA),
+            color: AppColors.secondaryText(context),
           ),
         ),
         trailing: Text(

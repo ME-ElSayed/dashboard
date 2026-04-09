@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/models/all_expenses_item_model.dart';
+import 'package:responsive_dashboard/utils/app_colors.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item_header.dart';
 
@@ -13,9 +14,9 @@ class InActiveAllExpensesItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: AppColors.surface(context),
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: const Color(0xFFF1F1F1)),
+          side: BorderSide(width: 1, color: AppColors.border(context)),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
