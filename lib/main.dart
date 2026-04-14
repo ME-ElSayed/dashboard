@@ -26,7 +26,7 @@ class ResponsiveDashBoard extends StatelessWidget {
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
-          title: 'Responsive Dashboard ',
+          title: 'Responsive admin Dashboard ',
           theme: AppTheme.light(),
           darkTheme: AppTheme.dark(),
           themeMode: ThemeController.instance.value,
